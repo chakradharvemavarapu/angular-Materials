@@ -1,0 +1,30 @@
+                      Angular Material(current version 14.0.4)
+	
+	
+Angular material is user interface component library.
+Angular material provides us with components to build amazing user interface very easily and very quickly.
+Angular material is an implementation of googles material design specification.
+	example:
+		Angular: Angular Material.
+		React  : Material UI.
+		Vue    : Vuetify.
+
+In-built responsive designing:
+
+	Angular material has in-built responsiveweb designing,
+	so that the website created usin angular material will redesign itself per the device size.
+	Angular material classes are created in such a way,that the website can fit any screen size.
+	the websites created using angular material are fully compatible with pc,tablets and mobile  devices.
+	
+Features of Angular material:
+	user interface controls:
+		Buttons
+		Check boxes
+		Text fields
+	Enhanced & specialized features:
+		Cards
+		Toolbar
+		Speed dial
+		Side nav
+		Swipe   ect.....
+	Cross-browser,and can be used to create reusable web components.

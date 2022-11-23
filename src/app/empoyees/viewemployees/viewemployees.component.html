@@ -1,0 +1,74 @@
+<div class="example-container mat-elevation-z8">
+  <mat-form-field appearance="standard"; else notaData>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search columns" #input>
+  </mat-form-field>
+  <mat-table #table [dataSource]="employees" matSort>
+    <ng-container matColumnDef="employeeId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Employee Id </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.employeeId}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> First Name </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.firstName}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.lastName}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="phoneNumber">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Phone Number </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.phoneNumber}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="hireDate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Hire Date </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.hireDate}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="salary">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Salary </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.salary}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="JobName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Job Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.jobId}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="commisionPct">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Commision Pct </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.commisionPct}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="managerName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Manager Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.managerId}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="DepartmentName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> DepartmentName </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.departmentId}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>
+        <button mat-icon-button color="primary">
+          <mat-icon aria-label="Example icon-button with a heart icon" (click)="openDialog()">add</mat-icon>
+        </button>
+      </mat-header-cell>
+
+      <mat-cell *matCellDef="let row; let i=index;">
+        <button mat-icon-button color="primary" (click)="editpoduct(row)">
+          <mat-icon aria-label="Edit" >edit</mat-icon>
+        </button>
+
+        <button mat-icon-button color="accent">
+          <mat-icon aria-label="Delete">delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  {{message}}
+</div>
+<mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 20, 30]" showFirstLastButtons></mat-paginator>

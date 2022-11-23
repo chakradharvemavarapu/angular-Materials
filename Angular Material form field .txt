@@ -1,0 +1,48 @@
+Forms:
+	First imports the MatFormFieldModule in app.modules.ts
+	import {MatFormFieldModule} from '@angular/material/form-field';
+	
+	<mat-form-field> is a component used to wrap several Angular Material components 
+	and apply common Text field styles such as the	
+	underline,
+	floating label,
+	and hint messages.
+
+	In this document, "form field" refers to the wrapper component <mat-form-field> and "form field control" refers to the component that the <mat-form-field> is wrapping (e.g. the
+	input, 
+	textarea,
+	select, 	etc.)
+	
+	example:
+		<mat-form-field appearance="fill">
+			<mat-label>First Name</mat-label>
+			<input matInput>
+		</mat-form-field>
+		
+Datepicker:	
+	The datepicker allows users to enter a date either through text input, or by choosing a date from the calendar.
+		
+	example:
+		<mat-form-field appearance="fill">
+		  <mat-label>Choose a date</mat-label>
+		  <input matInput [matDatepicker]="picker">
+		  <mat-hint>MM/DD/YYYY</mat-hint>
+		  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+		  <mat-datepicker #picker></mat-datepicker>
+		</mat-form-field>
+		
+	A datepicker is composed of a text input and a calendar pop-up, connected via the matDatepicker property on the text input.
+
+	There is also an optional datepicker toggle button that gives the user an easy way to open the datepicker pop-up.
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,95 @@
+<h1 mat-dialog-title>Create Employee</h1>
+<form #createEmployeeForm="ngForm" (ngSubmit)="onSubmit(createEmployeeForm)">
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+
+      <mat-form-field appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input matInput type="text" name="firstName" ngModel #firstName="ngModel">
+      </mat-form-field><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" name="lastName" ngModel #lastName="ngModel">
+      </mat-form-field><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Gmail</mat-label>
+        <input matInput type="text" name="email" ngModel #email="ngModel">
+      </mat-form-field><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Phone Number</mat-label>
+        <input type="text" matInput name="phoneNumber" ngModel #phoneNumber="ngModel">
+      </mat-form-field><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Hire Date</mat-label>
+        <input matInput type="text" [matDatepicker]="picker" name="hireDate" ngModel #hireDate="ngModel">
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field><br><br>
+
+      <mat-radio-group aria-label="Select an option">
+        <mat-label>Select Gender :</mat-label><br><br>
+        <input matInput  name="Male" ngModel #Male="ngModel">
+        <mat-radio-button value="1">Male</mat-radio-button>&nbsp;
+        <mat-radio-button value="2">Female</mat-radio-button>
+      </mat-radio-group><br>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+      <mat-form-field appearance="fill">
+        <mat-label>Salary</mat-label>
+        <input type="number" matInput name="salary" ngModel #salary="ngModel">
+      </mat-form-field><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Job Id</mat-label>
+        <mat-select  disableRipple name="jobId" ngModel #jobId="ngModel">
+          <mat-option value="IT_PROG">IT_PROG</mat-option>
+          <mat-option value="MK_REP">MK_REP</mat-option>
+          <mat-option value="IT_PROG">IT_PROG</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Commision pct</mat-label>
+        <input type="number" matInput name="commisionPct" ngModel #commisionPct="ngModel">
+      </mat-form-field><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Manager Id</mat-label>
+        <mat-select  disableRipple name="managerId" ngModel #managerId="ngModel">
+          <mat-option value="100">Ravi</mat-option>
+          <mat-option value="103">Sampath</mat-option>
+          <mat-option value="124">Srinivas</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label> Department Id</mat-label>
+        <mat-select  disableRipple name="departmentId" ngModel #departmentId="ngModel">
+          <mat-option value="20">Testing Department</mat-option>
+          <mat-option value="50">Production Department</mat-option>
+          <mat-option value="60">60</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+
+      <section class="example-section">
+        <mat-label>Select Language :</mat-label><br><br>
+        <mat-checkbox class="example-margin checkbox-width"> English </mat-checkbox>
+        <mat-checkbox class="example-margin checkbox-width"> Hindi </mat-checkbox>
+        <mat-checkbox class="example-margin checkbox-width"> Telugu </mat-checkbox>
+      </section><br>
+
+      
+    </div>
+  </div>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-flat-button color="primary" >Submit</button>
+      <button ml-5 mat-flat-button mat-dialog-close >Cancle</button>
+  </div>
+</form>
